@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | ID是小兰</title>
+  <title>前后端身份验证 | ID是小兰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ID是小兰">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="1.0前后端的身份认证1.1主流的 Web 开发模式有两种: 基于服务端渲染的传统 Web 开发模式  基于前后端分离的新型 Web 开发模式  2.1服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不 需要使用 Ajax 这样的技术额外请求页面的数据。&#96;12345app.get(&amp;#x27;&#x2F;index.html&amp;#x27;,(req,res) &#x3D;&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端身份验证">
+<meta property="og:url" content="http://example.com/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/index.html">
 <meta property="og:site_name" content="ID是小兰">
+<meta property="og:description" content="1.0前后端的身份认证1.1主流的 Web 开发模式有两种: 基于服务端渲染的传统 Web 开发模式  基于前后端分离的新型 Web 开发模式  2.1服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不 需要使用 Ajax 这样的技术额外请求页面的数据。&#96;12345app.get(&amp;#x27;&#x2F;index.html&amp;#x27;,(req,res) &#x3D;&amp;gt">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-27T06:07:36.000Z">
+<meta property="article:modified_time" content="2021-02-27T06:08:05.488Z">
 <meta property="article:author" content="ID是小兰">
 <meta name="twitter:card" content="summary">
   
@@ -183,214 +187,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-前后端身份验证" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前后端身份验证
+    </h1>
+  
+
+        
+        <a href="/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/" class="archive-article-date">
+  	<time datetime="2021-02-27T06:07:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-0前后端的身份认证"><a href="#1-0前后端的身份认证" class="headerlink" title="1.0前后端的身份认证"></a>1.0前后端的身份认证</h3><h4 id="1-1主流的-Web-开发模式有两种"><a href="#1-1主流的-Web-开发模式有两种" class="headerlink" title="1.1主流的 Web 开发模式有两种:"></a>1.1主流的 Web 开发模式有两种:</h4><ul>
+<li>基于服务端渲染的传统 Web 开发模式 </li>
+<li>基于前后端分离的新型 Web 开发模式</li>
+</ul>
+<h4 id="2-1服务器发送给客户端的-HTML-页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不-需要使用-Ajax-这样的技术额外请求页面的数据。"><a href="#2-1服务器发送给客户端的-HTML-页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不-需要使用-Ajax-这样的技术额外请求页面的数据。" class="headerlink" title="2.1服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不 需要使用 Ajax 这样的技术额外请求页面的数据。`"></a>2.1服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不 需要使用 Ajax 这样的技术额外请求页面的数据。`</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/index.html&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span>  user =&#123;<span class="attr">name</span>:<span class="string">&#x27;zs&#x27;</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;</span><br><span class="line">    <span class="keyword">const</span> html = <span class="string">`&lt;h1&gt;姓名:<span class="subst">$&#123;user.name&#125;</span>,年龄:<span class="subst">$&#123;user.age&#125;</span>&lt;/h1&gt;`</span></span><br><span class="line">    res.send(html)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>优点:前端耗时少,有利于SEO</p>
+<p>缺点:占用服务器资源,不利于前后端分离,开发效率低</p>
+<h3 id="2-2前后端分离的-Web-开发模式"><a href="#2-2前后端分离的-Web-开发模式" class="headerlink" title="2.2前后端分离的 Web 开发模式"></a>2.2前后端分离的 Web 开发模式</h3><p>是后端只负责提供 API 接口，前端使用 Ajax 调用接口的开发模式。</p>
+<p>优点:开发体验好,用户体验好,减轻了服务器端的渲染压力</p>
+<p>缺点:不利于SEO</p>
+<p>2.3Web 开发模式选择</p>
+<ol>
+<li>如企业级网站，主要功能是展示而没有复杂的交互，并且需要良好的 SEO，则这时我们就需要使用服务器端渲染； </li>
+<li>类似后台管理页面，交互性比较强，不需要 SEO 的考虑，那么就可以使用前后端分离的开发模式。</li>
+</ol>
+<h3 id="3-0-身份认证（Authentication）"><a href="#3-0-身份认证（Authentication）" class="headerlink" title="3.0:身份认证（Authentication）"></a>3.0:身份认证（Authentication）</h3><ul>
+<li>服务端渲染推荐使用 Session 认证机制 </li>
+<li> 前后端分离推荐使用 JWT 认证机制</li>
+</ul>
+<h4 id="3-1-Session-认证机制"><a href="#3-1-Session-认证机制" class="headerlink" title="3.1: Session 认证机制"></a>3.1: Session 认证机制</h4><p>Cookie 是存储在用户浏览器中的一段不超过 4 KB 的字符串。它由一个名称（Name）、一个值（Value）和其它几个用 于控制 Cookie 有效期、安全性、使用范围的可选属性组成。 </p>
+<p>不同域名下的 Cookie 各自独立，每当客户端发起请求时，会自动把当前域名下所有未过期的 Cookie 一同发送到服务器。</p>
+<ul>
+<li>自动发送 </li>
+<li>域名独立 </li>
+<li>过期时限 </li>
+<li>4KB 限制</li>
+</ul>
+<p>客户端第一次请求服务器的时候，服务器通过响应头的形式，向客户端发送一个身份认证的 Cookie，客户端会自动 将 Cookie 保存在浏览器中。 随后，当客户端浏览器每次请求服务器的时候，浏览器会自动将身份认证相关的 Cookie，通过请求头的形式发送给 服务器，服务器即可验明客户端的身份。</p>
+<h4 id="3-2Cookie-不具有安全性"><a href="#3-2Cookie-不具有安全性" class="headerlink" title="3.2Cookie 不具有安全性"></a>3.2Cookie 不具有安全性</h4><p>Cookie 存储在浏览器中的，而且浏览器也提供了读写 Cookie 的 API，因此 Cookie 很容易被伪造，不要使用 Cookie 存储重要且隐私的数据！</p>
+<h4 id="3-3-提高身份认证的安全性"><a href="#3-3-提高身份认证的安全性" class="headerlink" title="3.3. 提高身份认证的安全性"></a>3.3. 提高身份认证的安全性</h4><h4 id="在-Express-中使用-Session-认证"><a href="#在-Express-中使用-Session-认证" class="headerlink" title="在 Express 中使用 Session 认证"></a>在 Express 中使用 Session 认证</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> session <span class="built_in">require</span>(<span class="string">&#x27;express-session&#x27;</span>)</span><br><span class="line"><span class="comment">//配置session中间件</span></span><br><span class="line">app.use(seesion(&#123;</span><br><span class="line">    secret:<span class="string">&#x27;hello session&#x27;</span>,<span class="comment">//secret 属性的值可以为任意字符串</span></span><br><span class="line">    resave: <span class="literal">false</span>,         <span class="comment">//固定写法</span></span><br><span class="line">    saveUninitialized:<span class="literal">true</span> <span class="comment">//固定写法</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<p> express-session 中间件配置成功后，即可通过 req.session 来访问和使用 session 对象，存储用户的关键信息：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/login&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.body.username!==<span class="string">&#x27;zs&#x27;</span>||req.body.password !==<span class="number">123</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res.send(&#123;<span class="attr">status</span>:<span class="number">1</span>,<span class="attr">msg</span>:<span class="string">&#x27;登录失败&#x27;</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    req.session.user = req.body <span class="comment">//存储用户信息至session</span></span><br><span class="line">    req.session.islogin =<span class="literal">true</span> <span class="comment">//记录用户的登录状态</span></span><br><span class="line">    </span><br><span class="line">    res.send(&#123;<span class="attr">status</span>:<span class="number">1</span>,<span class="attr">msg</span>:<span class="string">&#x27;登录成功&#x27;</span>&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>从 req.session 对象上获取之前存储的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/info&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!req.session.islogin) <span class="keyword">return</span> res.send(&#123;<span class="attr">status</span>:<span class="number">1</span>,<span class="attr">msg</span>:<span class="string">&#x27;未登录&#x27;</span>&#125;)</span><br><span class="line">    res.send(&#123;<span class="attr">status</span>:<span class="number">1</span>,<span class="attr">msg</span>:<span class="string">&#x27;登录成功&#x27;</span>,,username:req.session.user.username&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>清空session</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/logout&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">    req.session.destroy()</span><br><span class="line">    res.send(&#123;</span><br><span class="line">        status:<span class="number">0</span>,</span><br><span class="line">        msg:<span class="string">&#x27;退出登录成功&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="4-0-JWT认证机制"><a href="#4-0-JWT认证机制" class="headerlink" title="4.0:JWT认证机制"></a>4.0:JWT认证机制</h3><h4 id="4-1Session-的局限性"><a href="#4-1Session-的局限性" class="headerlink" title="4.1Session 的局限性"></a>4.1Session 的局限性</h4><p>需要配合Cookie才能实现,Cookie默认不支持跨域访问,需要做很多额外的配置,才能实现Session认证</p>
+<p> JWT 通常由三部分组成，分别是 Header（头部）、Payload（有效荷载）、Signature（签名）。“.”分隔</p>
+<p>此后，客户端每次与服务器通信，都要带上这个 JWT。推荐的做法是把 JWT 放在 HTTP 请求头的 Authorization 字段 中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer &lt;token&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-2两个JWT相关的包"><a href="#4-2两个JWT相关的包" class="headerlink" title="4.2两个JWT相关的包"></a>4.2两个JWT相关的包</h4><ul>
+<li>jsonwebtoken 用于生成JWT字符串</li>
+<li>express-jwt 用于将JWT字符串解析还原成JSON 对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//secret 密钥,生成JWT字符串,和解析JWT字符串的时候,对用户进行解密</span></span><br><span class="line"><span class="keyword">const</span> secretKey =<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="comment">//登录成功后生成JWT字符串 调用jsonwebtoken 包提供的sign() 方法</span></span><br><span class="line">app.post(<span class="string">&#x27;./api/login&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">    res.send(&#123;</span><br><span class="line">        status:<span class="number">0</span>,</span><br><span class="line">        msg:<span class="string">&#x27;登陆成功&#x27;</span>,</span><br><span class="line">        <span class="comment">//用户信息,密钥,配置对象(时效)</span></span><br><span class="line"> token:jwt.sign(&#123;<span class="attr">username</span>:user.username&#125;,secretKey,&#123;<span class="attr">expiresIn</span>:<span class="string">&#x27;30s&#x27;</span>&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-3在-Express-中使用-JWT"><a href="#4-3在-Express-中使用-JWT" class="headerlink" title="4.3在 Express 中使用 JWT"></a>4.3在 Express 中使用 JWT</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解析token中间件,指定不需要访问的权限的接口</span></span><br><span class="line">app.use(exxpressJWT(&#123;<span class="attr">secret</span>:secretKey&#125;).unless(&#123;<span class="attr">pasth</span>:[<span class="regexp">/^\/api\//</span>]&#125;))</span><br></pre></td></tr></table></figure>
+<h4 id="4-4使用-req-user-获取用户信息"><a href="#4-4使用-req-user-获取用户信息" class="headerlink" title="4.4使用 req.user 获取用户信息"></a>4.4使用 req.user 获取用户信息</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/admin/getinfo&#x27;</span>,(req,res)&#123;</span><br><span class="line">        res.send(&#123;</span><br><span class="line">        status:<span class="number">200</span>,</span><br><span class="line">        msg:<span class="string">&#x27;获取用户信息成功&#x27;</span></span><br><span class="line">        data:req.user</span><br><span class="line">        &#125;)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-5捕获解析-JWT-失败后产生的错误"><a href="#4-5捕获解析-JWT-失败后产生的错误" class="headerlink" title="4.5捕获解析 JWT 失败后产生的错误"></a>4.5捕获解析 JWT 失败后产生的错误</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="function">(<span class="params">err,req,res,next</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err.name ===UnauthorizedError)&#123;</span><br><span class="line">        <span class="keyword">return</span> res.send(&#123;</span><br><span class="line">            status:<span class="string">&#x27;401&#x27;</span>,</span><br><span class="line">            message:<span class="string">&#x27;无效的token&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    res.status(<span class="number">500</span>).send(<span class="string">&#x27;error&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A705/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A705/">js高级05</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A704/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:04:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/27/mysql%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A704/">js高级04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-0%E5%89%8D%E5%90%8E%E7%AB%AF%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">1.0前后端的身份认证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E4%B8%BB%E6%B5%81%E7%9A%84-Web-%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F%E6%9C%89%E4%B8%A4%E7%A7%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1.1主流的 Web 开发模式有两种:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E9%80%81%E7%BB%99%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84-HTML-%E9%A1%B5%E9%9D%A2%EF%BC%8C%E6%98%AF%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%BC%E6%8E%A5%EF%BC%8C%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E7%9A%84%E3%80%82%E5%9B%A0%E6%AD%A4%EF%BC%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8D-%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8-Ajax-%E8%BF%99%E6%A0%B7%E7%9A%84%E6%8A%80%E6%9C%AF%E9%A2%9D%E5%A4%96%E8%AF%B7%E6%B1%82%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82"><span class="toc-number">1.2.</span> <span class="toc-text">2.1服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不 需要使用 Ajax 这样的技术额外请求页面的数据。&#96;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84-Web-%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">2.2前后端分离的 Web 开发模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%EF%BC%88Authentication%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">3.0:身份认证（Authentication）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Session-%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6"><span class="toc-number">3.1.</span> <span class="toc-text">3.1: Session 认证机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2Cookie-%E4%B8%8D%E5%85%B7%E6%9C%89%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text">3.2Cookie 不具有安全性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%8F%90%E9%AB%98%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text">3.3. 提高身份认证的安全性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-Express-%E4%B8%AD%E4%BD%BF%E7%94%A8-Session-%E8%AE%A4%E8%AF%81"><span class="toc-number">3.4.</span> <span class="toc-text">在 Express 中使用 Session 认证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-0-JWT%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">4.0:JWT认证机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1Session-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">4.1.</span> <span class="toc-text">4.1Session 的局限性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2%E4%B8%A4%E4%B8%AAJWT%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="toc-number">4.2.</span> <span class="toc-text">4.2两个JWT相关的包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3%E5%9C%A8-Express-%E4%B8%AD%E4%BD%BF%E7%94%A8-JWT"><span class="toc-number">4.3.</span> <span class="toc-text">4.3在 Express 中使用 JWT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4%E4%BD%BF%E7%94%A8-req-user-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">4.4.</span> <span class="toc-text">4.4使用 req.user 获取用户信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5%E6%8D%95%E8%8E%B7%E8%A7%A3%E6%9E%90-JWT-%E5%A4%B1%E8%B4%A5%E5%90%8E%E4%BA%A7%E7%94%9F%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">4.5.</span> <span class="toc-text">4.5捕获解析 JWT 失败后产生的错误</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A703/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:02:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A703/">js高级03</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A702/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:01:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A702/">js高级02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A701/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A701/">js高级01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/08/ES6%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-02-08T15:57:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/08/ES6%E7%AC%94%E8%AE%B0/">ES6笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/08/hello-world/" class="archive-article-date">
-  	<time datetime="2021-02-08T10:59:24.172Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -414,8 +419,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
