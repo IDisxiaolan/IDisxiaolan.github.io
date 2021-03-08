@@ -185,6 +185,166 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/09/jQuery01/">jQuery01</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/09/jQuery01/" class="archive-article-date">
+  	<time datetime="2021-02-09T11:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-0-jQuery-的基本使用"><a href="#1-0-jQuery-的基本使用" class="headerlink" title="1.0 jQuery 的基本使用"></a>1.0 jQuery 的基本使用</h4><p>​    jQuery的官网地址： <a target="_blank" rel="noopener" href="https://jquery.com/%EF%BC%8C%E5%AE%98%E7%BD%91%E5%8D%B3%E5%8F%AF%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E3%80%82">https://jquery.com/，官网即可下载最新版本。</a></p>
+<blockquote>
+<p> 各个版本的下载：<a target="_blank" rel="noopener" href="https://code.jquery.com/">https://code.jquery.com/</a></p>
+</blockquote>
+<p>版本介绍：</p>
+<blockquote>
+<ul>
+<li><p>1x ：兼容 IE 678 等低版本浏览器， 官网不再更新</p>
+</li>
+<li><p>2x ：不兼容 IE 678 等低版本浏览器， 官网不再更新</p>
+</li>
+<li><p>3x ：不兼容 IE 678 等低版本浏览器， 是官方主要更新维护的版本</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-1jQuery的入口函数"><a href="#1-1jQuery的入口函数" class="headerlink" title="1.1jQuery的入口函数"></a>1.1jQuery的入口函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种: 简单易用。</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;   </span><br><span class="line">    ...  <span class="comment">// 此处是页面 DOM 加载完成的入口</span></span><br><span class="line">&#125;) ; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种: 繁琐，但是也可以实现</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   ...  <span class="comment">//  此处是页面DOM加载完成的入口</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li><h4 id="2jQuery中的顶级对象"><a href="#2jQuery中的顶级对象" class="headerlink" title="2jQuery中的顶级对象"></a>2jQuery中的顶级对象</h4></li>
+<li><p>$是 jQuery 的别称，在代码中可以使用 jQuery 代替，但一般为了方便，通常都直接使用 $ 。</p>
+</li>
+<li><p>$是jQuery的顶级对象，相当于原生JavaScript中的 window。把元素利用$包装成jQuery对象，就可以调用jQuery 的方法。</p>
+<h4 id="1-3jQuery-对象和-DOM-对象"><a href="#1-3jQuery-对象和-DOM-对象" class="headerlink" title="1.3jQuery 对象和 DOM 对象"></a>1.3jQuery 对象和 DOM 对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.box&#x27;</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(box);</span><br><span class="line">      <span class="built_in">console</span>.log($(box)[<span class="number">0</span>]);   <span class="comment">// 2.jQuery 对象转换为 DOM 对象有两种方法：</span></span><br><span class="line">      <span class="built_in">console</span>.log($(box).get(<span class="number">0</span>)); <span class="comment">//   2.1 jQuery对象[索引值]</span></span><br><span class="line">      <span class="built_in">console</span>.log($(box)); <span class="comment">//   2.2 jQuery对象.get(索引值)</span></span><br><span class="line">      $(() =&gt; &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>案例代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;多个里面筛选几个&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&quot;ul li:first&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>);</span><br><span class="line">            $(<span class="string">&quot;ul li:eq(2)&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;blue&quot;</span>);</span><br><span class="line">            $(<span class="string">&quot;ol li:odd&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;skyblue&quot;</span>);</span><br><span class="line">            $(<span class="string">&quot;ol li:even&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;pink&quot;</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="1-3筛选选择器"><a href="#1-3筛选选择器" class="headerlink" title="1.3筛选选择器"></a>1.3筛选选择器</h5><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">用法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:first</td>
+<td align="center">$(li:first)</td>
+<td align="center">获取第一个li元素</td>
+</tr>
+<tr>
+<td align="center">:last</td>
+<td align="center">$(‘li:last’)</td>
+<td align="center">获取最后一个元素</td>
+</tr>
+<tr>
+<td align="center">:eq(index)</td>
+<td align="center">$(‘li:eq(2)’)</td>
+<td align="center">获取索引为二的元素</td>
+</tr>
+<tr>
+<td align="center">:odd</td>
+<td align="center">$(‘li:odd’)</td>
+<td align="center">获取索引为奇数的元素</td>
+</tr>
+<tr>
+<td align="center">:even</td>
+<td align="center">$(“li:even”)</td>
+<td align="center">获取到li元素中索引为偶数的元素</td>
+</tr>
+</tbody></table>
+<p><strong>2.0样式设置</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;div&#x27;</span>).css(<span class="string">&#x27;属性&#x27;</span>, <span class="string">&#x27;值&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p><strong>2.1排他思想</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想要多选一的效果，排他思想：当前元素设置样式，其余的兄弟元素清除样式。</span></span><br><span class="line">$(<span class="built_in">this</span>).css(“color”,”red”);</span><br><span class="line">$(<span class="built_in">this</span>).siblings(). css(“color”,””);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>2.2</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">this</span>).css(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;red&#x27;</span>).sibling().css(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;&#x27;</span>);  <span class="comment">//链式编程</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).hide();  <span class="comment">// 页面中所有的div全部隐藏，不用循环操作</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-0淘宝服饰精品案例"><a href="#3-0淘宝服饰精品案例" class="headerlink" title="3.0淘宝服饰精品案例"></a>3.0淘宝服饰精品案例</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">              $(<span class="string">&#x27;li&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">               $(<span class="string">&#x27;#content&gt;div&#x27;</span>).eq($(<span class="built_in">this</span>).index()).show().siblings().hide();</span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-0jquery"><a href="#4-0jquery" class="headerlink" title="4.0jquery"></a>4.0jquery</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 1.参数只写属性名，则是返回属性值</span></span><br><span class="line">   <span class="keyword">var</span> strColor = $(<span class="built_in">this</span>).css(<span class="string">&#x27;color&#x27;</span>);</span><br><span class="line">   </span><br><span class="line"><span class="comment">// 2.  参数是属性名，属性值，逗号分隔，是设置一组样式，属性必须加引号，值如果是数字可以不用跟单位和引号</span></span><br><span class="line">   $(<span class="built_in">this</span>).css(<span class="string">&#x27;&#x27;</span>color<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>red<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 3.  参数可以是对象形式，方便设置多组样式。属性名和属性值用冒号隔开， 属性可以不用加引号</span></span><br><span class="line">   $(<span class="built_in">this</span>).css(&#123; <span class="string">&quot;color&quot;</span>:<span class="string">&quot;white&quot;</span>,<span class="string">&quot;font-size&quot;</span>:<span class="string">&quot;20px&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="4-1设置类样式方法"><a href="#4-1设置类样式方法" class="headerlink" title="4.1设置类样式方法"></a>4.1设置类样式方法</h4>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 1.添加类</span></span><br><span class="line">   $(<span class="string">&quot;div&quot;</span>).addClass(<span class="string">&quot;current&quot;</span>);</span><br><span class="line">   </span><br><span class="line"><span class="comment">// 2.删除类</span></span><br><span class="line">   $(<span class="string">&quot;div&quot;</span>).removeClass(<span class="string">&quot;current&quot;</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 3.切换类</span></span><br><span class="line">   $(<span class="string">&quot;div&quot;</span>).toggleClass(<span class="string">&quot;current&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="4-2jQuery效果"><a href="#4-2jQuery效果" class="headerlink" title="4.2jQuery效果"></a>4.2jQuery效果</h4><ol>
+<li><p>显示隐藏：show() / hide() / toggle() ;</p>
+<ol start="2">
+<li>划入画出：slideDown() / slideUp() / slideToggle() ; </li>
+</ol>
+</li>
+<li><p>淡入淡出：fadeIn() / fadeOut() / fadeToggle() / fadeTo() ; </p>
+<ol start="4">
+<li>自定义动画：animate() ;</li>
+</ol>
+<p>注意：动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行。</p>
+<p>jQuery为我们提供另一个方法，可以停止动画排队：stop() ;</p>
+<h4 id="4-21事件切换"><a href="#4-21事件切换" class="headerlink" title="4.21事件切换"></a>4.21事件切换</h4><p>​    jQuery中为我们添加了一个新事件 hover() ; 功能类似 css 中的伪类 :hover 。介绍如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hover([over,]out)     <span class="comment">// 其中over和out为两个函数</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h4 id="4-3滑入滑出"><a href="#4-3滑入滑出" class="headerlink" title="4.3滑入滑出"></a>4.3滑入滑出</h4><p>​    滑入滑出动画，常见有三个方法：slideDown() / slideUp() / slideToggle() ; </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">          $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">0</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).slideDown())</span><br><span class="line">          $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">1</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).slideUp())</span><br><span class="line">          $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">2</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).slideToggle())</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4-4淡入淡出"><a href="#4-4淡入淡出" class="headerlink" title="4.4淡入淡出"></a>4.4淡入淡出</h4><p>​     淡入淡出动画，常见有四个方法：fadeIn() / fadeOut() / fadeToggle() / fadeTo() ; </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">           $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">0</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).fadeIn(<span class="number">1000</span>))</span><br><span class="line">           $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">1</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).fadeOut(<span class="number">1000</span>))</span><br><span class="line">           $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">2</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).fadeToggle(<span class="number">1000</span>))</span><br><span class="line">           $(<span class="string">&#x27;button&#x27;</span>).eq(<span class="number">3</span>).click(<span class="function">() =&gt;</span> $(<span class="string">&#x27;.box&#x27;</span>).fadeTo(<span class="number">1000</span>, <span class="number">.5</span>))</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4-5自定义动画"><a href="#4-5自定义动画" class="headerlink" title="4.5自定义动画"></a>4.5自定义动画</h4><p>​    自定义动画非常强大，通过参数的传递可以模拟以上所有动画，方法为：animate() ;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">          $(<span class="string">&#x27;button&#x27;</span>).click(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">              $(<span class="string">&#x27;.box&#x27;</span>).animate(&#123;</span><br><span class="line">                  width: <span class="number">150</span>,</span><br><span class="line">                  height: <span class="number">150</span>,</span><br><span class="line">                  left: <span class="number">50</span>,</span><br><span class="line">                  borderRadius: <span class="string">&#x27;50%&#x27;</span></span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-6王者荣耀手风琴案例"><a href="#4-6王者荣耀手风琴案例" class="headerlink" title="4.6王者荣耀手风琴案例"></a>4.6王者荣耀手风琴案例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">         $(<span class="string">&#x27;li&#x27;</span>).mouseover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">             $(<span class="built_in">this</span>).stop().animate(&#123;</span><br><span class="line">                 width: <span class="number">224</span></span><br><span class="line">             &#125;).find(<span class="string">&#x27;.big&#x27;</span>).stop().fadeIn().siblings(<span class="string">&#x27;.small&#x27;</span>).stop().fadeOut()</span><br><span class="line">             $(<span class="built_in">this</span>).siblings().stop().animate(&#123;</span><br><span class="line">                 width: <span class="number">69</span></span><br><span class="line">             &#125;).find(<span class="string">&#x27;.big&#x27;</span>).stop().fadeOut().siblings(<span class="string">&#x27;.small&#x27;</span>).stop().fadeIn()</span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://code.jquery.com/">https://code.jquery.com/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/09/jQuery01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js高级05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

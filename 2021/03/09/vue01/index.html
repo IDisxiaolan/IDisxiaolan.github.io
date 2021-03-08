@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | ID是小兰</title>
+  <title>vue01 | ID是小兰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ID是小兰">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="1.0Vue是什么?1.1渐进式javascript框架; 当前官方推荐2.6,IE8一下不兼容1.2起步:12345678&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt; &lt;&#x2F;script&gt;&lt;div id&#x3D;&quot;app&quot;&gt;&lt;&#x2F;div&gt;   &#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue01">
+<meta property="og:url" content="http://example.com/2021/03/09/vue01/index.html">
 <meta property="og:site_name" content="ID是小兰">
+<meta property="og:description" content="1.0Vue是什么?1.1渐进式javascript框架; 当前官方推荐2.6,IE8一下不兼容1.2起步:12345678&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt; &lt;&#x2F;script&gt;&lt;div id&#x3D;&quot;app&quot;&gt;&lt;&#x2F;div&gt;   &#x2F;&#x2F;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-08T23:38:50.000Z">
+<meta property="article:modified_time" content="2021-03-08T23:39:15.620Z">
 <meta property="article:author" content="ID是小兰">
 <meta name="twitter:card" content="summary">
   
@@ -183,241 +187,209 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue01
+    </h1>
+  
+
+        
+        <a href="/2021/03/09/vue01/" class="archive-article-date">
+  	<time datetime="2021-03-08T23:38:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-0Vue是什么"><a href="#1-0Vue是什么" class="headerlink" title="1.0Vue是什么?"></a>1.0Vue是什么?</h3><h4 id="1-1渐进式javascript框架-当前官方推荐2-6-IE8一下不兼容"><a href="#1-1渐进式javascript框架-当前官方推荐2-6-IE8一下不兼容" class="headerlink" title="1.1渐进式javascript框架; 当前官方推荐2.6,IE8一下不兼容"></a>1.1渐进式javascript框架; 当前官方推荐2.6,IE8一下不兼容</h4><h4 id="1-2起步"><a href="#1-2起步" class="headerlink" title="1.2起步:"></a>1.2起步:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt; &lt;/script&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;app&quot;</span>&gt;&lt;<span class="regexp">/div&gt;   /</span><span class="regexp">/挂载点不能是body,html</span></span><br><span class="line"><span class="regexp">const vm = new Vue(&#123;</span></span><br><span class="line"><span class="regexp">    el:&#x27;app&#x27;,  /</span><span class="regexp">/ 挂载节点的选择器</span></span><br><span class="line"><span class="regexp">    data:&#x27;&#x27;, /</span><span class="regexp">/模板中用到的所有数据</span></span><br><span class="line"><span class="regexp">    methods:&#123;&#125;  /</span><span class="regexp">/方法</span></span><br><span class="line"><span class="regexp">    ....</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3MVVM-Model-View-ViewModel的简写"><a href="#1-3MVVM-Model-View-ViewModel的简写" class="headerlink" title="1.3MVVM:Model-View-ViewModel的简写"></a>1.3MVVM:Model-View-ViewModel的简写</h4><p>data数据一旦变化,模板里面会自动更新</p>
+<h3 id="2-0指令"><a href="#2-0指令" class="headerlink" title="2.0指令:"></a>2.0指令:</h3><h4 id="2-1本质就是自定义属性-v-开头"><a href="#2-1本质就是自定义属性-v-开头" class="headerlink" title="2.1本质就是自定义属性,v- 开头;"></a>2.1本质就是自定义属性,v- 开头;</h4><table>
+<thead>
+<tr>
+<th align="center">v-html</th>
+<th align="center">v-text</th>
+<th align="center">v-cloak</th>
+<th align="center">v-pre</th>
+<th align="center">v-once</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">渲染内容</td>
+<td align="center">渲染文本</td>
+<td align="center">解决闪烁</td>
+<td align="center">原文显示</td>
+<td align="center">一次性绑定</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">v-bind</th>
+<th align="center">v-model</th>
+<th align="center">v-if</th>
+<th align="center">v-for</th>
+<th align="center">v-on</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">属性绑定</td>
+<td align="center">双向绑定</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">事件绑定</td>
+</tr>
+</tbody></table>
+<h4 id="2-2绑定-传参"><a href="#2-2绑定-传参" class="headerlink" title="2.2绑定,传参"></a>2.2绑定,传参</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=<span class="string">&#x27; num++&#x27;</span>&gt;<span class="number">1</span>&lt;/button&gt;</span><br><span class="line">&lt;button @click=<span class="string">&#x27; num++&#x27;</span>&gt;<span class="number">2</span>&lt;/button&gt;</span><br><span class="line">&lt;button @click=<span class="string">&#x27; handle1(10)&#x27;</span>&gt;<span class="number">3</span>&lt;/button&gt;</span><br><span class="line">&lt;button @click=<span class="string">&#x27; handle2($event,100)&#x27;</span>&gt;<span class="number">4</span>&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"> handle2: <span class="function"><span class="keyword">function</span>(<span class="params">event, param</span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(event);</span><br><span class="line">     <span class="built_in">console</span>.log(param);</span><br><span class="line">     <span class="built_in">console</span>.log(event.target);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-3事件修饰符"><a href="#3-3事件修饰符" class="headerlink" title="3.3事件修饰符"></a>3.3事件修饰符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;标签 @事件类型.修饰符=<span class="string">&quot;时间函数&quot;</span> /&gt;</span><br><span class="line"> <span class="comment">//修饰符内容</span></span><br><span class="line">stop,prevent,self,capture,once, </span><br><span class="line"><span class="comment">//按键相关事件</span></span><br><span class="line">keydown,keyup,keypress,input,</span><br><span class="line"><span class="comment">//自定义按键修饰符 </span></span><br><span class="line"> Vue.config.keyCodes.修饰符名 = 按键码</span><br></pre></td></tr></table></figure>
+<h3 id="4-0-class"><a href="#4-0-class" class="headerlink" title="4.0:class"></a>4.0:class</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象</span></span><br><span class="line">&lt;标签 :<span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;&#123; class名1:变量1，class名2:变量2 &#125;&quot;</span> /&gt;</span><br><span class="line"><span class="comment">//对象</span></span><br><span class="line">&lt;标签 :<span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;[变量1，变量2,&#x27;class名1&#x27;,&#x27;class名2&#x27;]&quot;</span> /&gt;</span><br><span class="line"><span class="comment">//属性绑定</span></span><br><span class="line"> &lt;标签 :<span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;条件 ？ &#x27;class名1&#x27;:&#x27;class名2&#x27; &quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="5-0-style"><a href="#5-0-style" class="headerlink" title="5.0:style"></a>5.0:style</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象</span></span><br><span class="line">&lt;标签 :style=<span class="string">&quot;&#123; css属性名名1:变量1，css属性名2:变量2 &#125;&quot;</span> /&gt;</span><br><span class="line"><span class="comment">//数组</span></span><br><span class="line"> &lt;标签 :style=<span class="string">&quot;[变量1，变量2]&quot;</span> /&gt; </span><br><span class="line">     变量<span class="number">1</span>:&#123; css属性名:css属性值 &#125;</span><br><span class="line">     变量<span class="number">2</span>:&#123; css属性名:css属性值 &#125;</span><br><span class="line"><span class="comment">//属性绑定</span></span><br><span class="line">&lt;标签 style=<span class="string">&quot;font-size:20px;border-color:red&quot;</span> /&gt;</span><br><span class="line">&lt;标签 :style=<span class="string">&quot;`font-size:$&#123;a&#125;;border-color:$&#123;b&#125;`&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/jQuery01/" class="archive-article-date">
-  	<time datetime="2021-02-09T11:35:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/jQuery01/">jQuery01</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/09/vue01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A705/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前后端身份验证</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A705/">js高级05</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-0Vue%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">1.0Vue是什么?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E6%B8%90%E8%BF%9B%E5%BC%8Fjavascript%E6%A1%86%E6%9E%B6-%E5%BD%93%E5%89%8D%E5%AE%98%E6%96%B9%E6%8E%A8%E8%8D%902-6-IE8%E4%B8%80%E4%B8%8B%E4%B8%8D%E5%85%BC%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">1.1渐进式javascript框架; 当前官方推荐2.6,IE8一下不兼容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E8%B5%B7%E6%AD%A5"><span class="toc-number">1.2.</span> <span class="toc-text">1.2起步:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3MVVM-Model-View-ViewModel%E7%9A%84%E7%AE%80%E5%86%99"><span class="toc-number">1.3.</span> <span class="toc-text">1.3MVVM:Model-View-ViewModel的简写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-0%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">2.0指令:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E6%9C%AC%E8%B4%A8%E5%B0%B1%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7-v-%E5%BC%80%E5%A4%B4"><span class="toc-number">2.1.</span> <span class="toc-text">2.1本质就是自定义属性,v- 开头;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E7%BB%91%E5%AE%9A-%E4%BC%A0%E5%8F%82"><span class="toc-number">2.2.</span> <span class="toc-text">2.2绑定,传参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">3.3事件修饰符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-0-class"><span class="toc-number">3.</span> <span class="toc-text">4.0:class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-0-style"><span class="toc-number">4.</span> <span class="toc-text">5.0:style</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A704/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:04:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A704/">js高级04</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A703/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:02:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A703/">js高级03</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A702/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:01:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A702/">js高级02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/js%E9%AB%98%E7%BA%A701/" class="archive-article-date">
-  	<time datetime="2021-02-09T07:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/js%E9%AB%98%E7%BA%A701/">js高级01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/08/ES6%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-02-08T15:57:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/08/ES6%E7%AC%94%E8%AE%B0/">ES6笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/08/hello-world/" class="archive-article-date">
-  	<time datetime="2021-02-08T10:59:24.172Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -441,8 +413,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
