@@ -185,6 +185,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/09/jQuery02/">jQuery02</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/09/jQuery02/" class="archive-article-date">
+  	<time datetime="2021-02-09T11:35:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="jQuery常用的三种属性操作"><a href="#jQuery常用的三种属性操作" class="headerlink" title="jQuery常用的三种属性操作:"></a>jQuery常用的三种属性操作:</h5><ol>
+<li><p>0元素固有属性值prop();  </p>
+</li>
+<li><p>1元素自定义属性值attr(); </p>
+</li>
+<li><p>1数据缓存  data()</p>
+</li>
+</ol>
+<p>谓元素固有属性就是元素本身自带的属性，比如 元素里面的 href ，比如 元素input里面的 type。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法: 获取属性语法</span></span><br><span class="line">prop(<span class="string">&quot;属性&quot;</span>);</span><br><span class="line">设置属性语法</span><br><span class="line">prop(<span class="string">&quot;属性&quot;</span>,<span class="string">&quot;属性值&quot;</span>)</span><br><span class="line"><span class="comment">//注意：prop() 除了普通属性操作，更适合操作表单属性：disabled / checked /selected 等。</span></span><br><span class="line"></span><br><span class="line">attr(<span class="string">&quot;属性&quot;</span>);</span><br><span class="line">attract(<span class="string">&quot;属性&quot;</span>,<span class="string">&quot;属性值&quot;</span>);  <span class="comment">//类似原生setAttribute()</span></span><br><span class="line"><span class="comment">//这个方法也可以获取h5的自定义属性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//data() 可以在指定的元素上存取数据，不会修改 DOM 元素结构。页面刷新，之前存放的数据都将被移除。</span></span><br><span class="line">data(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;value&quot;</span>)<span class="comment">//附加数据</span></span><br><span class="line">data(<span class="string">&quot;name&quot;</span>) <span class="comment">//获取数据</span></span><br><span class="line"><span class="comment">//读取 HTML5 自定义属性 data-index</span></span><br></pre></td></tr></table></figure>
+<h4 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a><strong>演示代码</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(() =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;a&quot;</span>).prop(<span class="string">&quot;href&quot;</span>));  	<span class="comment">//http://www.baidu.com/</span></span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&#x27;a&#x27;</span>).prop(<span class="string">&quot;href&quot;</span>, <span class="string">&quot;http://www.baidu.com&quot;</span>)); </span><br><span class="line">    $(<span class="string">&#x27;input&#x27;</span>).eq(<span class="number">0</span>).prop(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;password&quot;</span>)  </span><br><span class="line">    $(<span class="string">&#x27;input&#x27;</span>).eq(<span class="number">1</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="built_in">this</span>).prop(<span class="string">&#x27;checked&#x27;</span>));  </span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;input&quot;</span>).eq(<span class="number">0</span>).attr(<span class="string">&quot;data-index&quot;</span>)); <span class="comment">//字符串</span></span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;input&quot;</span>).data(<span class="string">&quot;index&quot;</span>)); <span class="comment">//数字型</span></span><br><span class="line">    $(<span class="string">&quot;div&quot;</span>).data(<span class="string">&quot;num&quot;</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&#x27;div&#x27;</span>).data(<span class="string">&quot;num&quot;</span>));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>2.1jQuery文本属性值</strong></p>
+<p>常见操作有三种：<strong>html()</strong> / <strong>text()</strong> / <strong>val()</strong> ; </p>
+<p>分别对应JS中的 innerHTML 、innerText 和 value 属性，</p>
+<p>主要针对元素的内容还有表单的值操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html();</span><br><span class="line">html(<span class="string">&quot;内容&quot;</span>):</span><br><span class="line">text();</span><br><span class="line">text(<span class="string">&quot;文本类容&quot;</span>)</span><br><span class="line">val();</span><br><span class="line">val(<span class="string">&quot;类容&quot;</span>)</span><br><span class="line"><span class="comment">//html() 可识别标签，text() 不识别标签。</span></span><br></pre></td></tr></table></figure>
+<p><strong>演示代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">&#x27;div&#x27;</span>).html()); <span class="comment">//    &lt;span&gt;123&lt;/span&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">&#x27;div&#x27;</span>).text()); <span class="comment">//          123</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).html(<span class="string">&#x27;&lt;span&gt;helloWorld&lt;/span&gt;&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">&#x27;input&#x27;</span>).val(<span class="string">&quot;你好世界&quot;</span>));</span><br><span class="line"><span class="comment">//获取和设置元素中的纯文本内容: text()</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.1. jQuery 元素操作</strong></p>
+<p>jQuery 元素操作主要讲的是用jQuery方法，操作标签的遍历、创建、添加、删除等 操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历</span></span><br><span class="line">       $(() =&gt; &#123;</span><br><span class="line">           <span class="comment">//方式1</span></span><br><span class="line">           $.each($(<span class="string">&#x27;div&#x27;</span>), <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log($(item).text());</span><br><span class="line">           &#125;)</span><br><span class="line">            <span class="comment">//方式2</span></span><br><span class="line">           $(<span class="string">&#x27;div&#x27;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log($(item).text());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建+添加</span></span><br><span class="line"> $(<span class="string">&#x27;ul&#x27;</span>).append($(<span class="string">&#x27;&lt;li&gt;hello&lt;/li&gt;&#x27;</span>))  </span><br><span class="line">  $(<span class="string">&#x27;div&#x27;</span>).eq(<span class="number">0</span>).prepend($(<span class="string">&#x27; &lt;p&gt;hello&lt;/p&gt;&#x27;</span>)) <span class="comment">//开头添加</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).eq(<span class="number">0</span>).before($(<span class="string">&#x27; &lt;p&gt;hello&lt;/p&gt;&#x27;</span>)) <span class="comment">//xx之前添加</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).eq(<span class="number">0</span>).after($(<span class="string">&#x27; &lt;p&gt;hello&lt;/p&gt;&#x27;</span>)) <span class="comment">//xx之前添加</span></span><br><span class="line">$(<span class="string">&quot;#app&quot;</span>).empty(); <span class="comment">//删除当前元素（不包括自己）</span></span><br><span class="line">$(<span class="string">&quot;#app&quot;</span>).remove(); <span class="comment">//删除当前元素（包括自己）</span></span><br></pre></td></tr></table></figure>
+<p><strong>4.1jQuery 尺寸操作</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">width() / height()</td>
+<td align="center">取得匹配元素宽高值</td>
+</tr>
+<tr>
+<td align="center">innerWidth() / innerHieght()</td>
+<td align="center">取得匹配元素宽高值 包含padding</td>
+</tr>
+<tr>
+<td align="center">outerWidth() / outerHeight()</td>
+<td align="center">取得匹配元素宽度的高度值 包含 padding,border</td>
+</tr>
+<tr>
+<td align="center">outerWidth(true) / outerHeight(true)</td>
+<td align="center">取得匹配元素宽度 包含padding,border , margin</td>
+</tr>
+</tbody></table>
+<ul>
+<li>以上参数为空,则是获取相应值,返回的是数字型</li>
+<li>如果参数为数字,则是修改相应值</li>
+<li>参数可以不必写单位</li>
+</ul>
+<p><strong>4.2jQuery 尺位置操作</strong></p>
+<p>jQuery的位置操作主要有三个： offset()、position()、scrollTop()/scrollLeft()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">console</span>.log($(<span class="string">&quot;.son&quot;</span>).offset()); <span class="comment">// 1. 获取元素距离页面左侧和顶部的距离: offset()</span></span><br><span class="line"> <span class="built_in">console</span>.log($(<span class="string">&quot;.son&quot;</span>).offset().left);</span><br><span class="line"><span class="comment">//2. 设置元素在页面中的位置: offset()</span></span><br><span class="line">$(<span class="string">&#x27;.son&#x27;</span>).offset(&#123;</span><br><span class="line">    left:<span class="number">50</span>,</span><br><span class="line">    top:<span class="number">50</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//获取元素相对定位父级元素的左侧和顶部的距离: position()</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">&#x27;.son&#x27;</span>).position())</span><br><span class="line"><span class="comment">//position 方法不能设置元素的偏移位置</span></span><br></pre></td></tr></table></figure>
+<p>4.3 scrollTop()   /   scrollLeft()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取元素中的内容被卷去的高度</span></span><br><span class="line">$(<span class="string">&#x27;.box&#x27;</span>).srcoll(<span class="function">()=&gt;</span> <span class="built_in">console</span>.log($(<span class="string">&#x27;.box&#x27;</span>).scrollTop()))</span><br><span class="line"><span class="comment">//获取整个页面内容被卷去的高度</span></span><br><span class="line">$(<span class="built_in">window</span>).srcoll(<span class="function">()=&gt;</span> <span class="built_in">console</span>.log($(<span class="built_in">window</span>).scrollTop()))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>第二天总结</strong>:</p>
+<h4 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作 :"></a>jQuery属性操作 :</h4><ol>
+<li>attr() 普通属性+自定义属性</li>
+<li>prop() 普通属性+表单属性</li>
+<li>data() H5新增的data-xxx</li>
+</ol>
+<h4 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h4><ol>
+<li>html() 类似DOM的inner HTML属性</li>
+<li>text() 类似DOM的innerText属性</li>
+<li>val() 类似DOM的value属性</li>
+</ol>
+<p>jQuery 元素操作</p>
+<ul>
+<li>遍历 each()</li>
+<li>创建 $(‘<div></div>div&gt;’)</li>
+<li>删除 remove() 删除指定向</li>
+<li>empyt() 清空</li>
+<li>html(“”) 清空</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/09/jQuery02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jQuery01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
