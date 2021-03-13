@@ -185,6 +185,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/09/jQuery03/">jQuery03</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/09/jQuery03/" class="archive-article-date">
+  	<time datetime="2021-02-09T11:36:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-1事件注册"><a href="#1-1事件注册" class="headerlink" title="1.1事件注册"></a>1.1事件注册</h5><ul>
+<li>优点: 操作简单，且不用担心事件覆盖等问题。 </li>
+<li>缺点: 普通的事件注册不能做事件委托，且无法实现事件解绑，需要借助其他方法。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">例子:</span><br><span class="line">$(<span class="string">&quot;.box&quot;</span>).click(<span class="function">()=&gt;</span>&#123;&#125;)</span><br><span class="line">$(<span class="string">&quot;.box&quot;</span>).on(&#123;</span><br><span class="line">    mouseover:<span class="function">()=&gt;</span>&#123;&#125;,</span><br><span class="line">    keyup:<span class="function">()=&gt;</span>&#123;&#125;</span><br><span class="line">    click:<span class="function">()=&gt;</span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//如果事件处理程序相同</span></span><br><span class="line">$(<span class="string">&quot;.box&quot;</span>).on(<span class="string">&quot;click mouseover&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="built_in">this</span>).toggleClass(<span class="string">&quot;current&quot;</span>)</span><br><span class="line">&#125; )</span><br><span class="line"><span class="comment">//事件委托</span></span><br><span class="line">$(<span class="string">&quot;ul&quot;</span>).on(<span class="string">&quot;click&quot;</span>,<span class="string">&quot;li&quot;</span>,<span class="function">()=&gt;</span>&#123;   &#125;) <span class="comment">//此前版本为bind(),live(),delegate()</span></span><br></pre></td></tr></table></figure>
+<h5 id="1-2on方法的优势"><a href="#1-2on方法的优势" class="headerlink" title="1.2on方法的优势:"></a><strong>1.2on方法的优势:</strong></h5><ol>
+<li>可以绑定多个事件;</li>
+<li>可以事件委托;</li>
+<li>可以给动态生成的元素绑定事件</li>
+</ol>
+<h5 id="1-3：发布微博案例"><a href="#1-3：发布微博案例" class="headerlink" title="1.3：发布微博案例"></a>1.3：发布微博案例</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">代码:</span><br><span class="line">  $(() =&gt; &#123;</span><br><span class="line">            $(<span class="string">&quot;.btn&quot;</span>).on(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> li = $(<span class="string">&quot;&lt;li&gt;&lt;/li&gt;&quot;</span>)</span><br><span class="line">                li.html(<span class="string">`<span class="subst">$&#123;$(<span class="string">&quot;.txt&quot;</span>).val()&#125;</span>&lt;a href=&quot;javascript:;&quot;&gt;×&lt;/a&gt;&lt;/li&gt;`</span>)</span><br><span class="line">                $(<span class="string">&quot;ul&quot;</span>).prepend(li)</span><br><span class="line">                li.slideDown();</span><br><span class="line">            &#125;)</span><br><span class="line">            $(<span class="string">&quot;ul&quot;</span>).on(<span class="string">&quot;click&quot;</span>, <span class="string">&quot; a&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="built_in">this</span>).parent().slideUp(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $(<span class="built_in">this</span>).remove();</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="1-4-事件处理-off-解绑事件"><a href="#1-4-事件处理-off-解绑事件" class="headerlink" title="1.4 事件处理 off() 解绑事件"></a>1.4 事件处理 off() 解绑事件</h5><p>off方法可以移除通过on()方法添加的事件处理程序</p>
+<p> jQuery 为我们提供了两个自动触发事件 <strong>trigger()</strong> 和 <strong>triggerHandler()</strong> <strong>;</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.click()		<span class="comment">//第一种简写</span></span><br><span class="line">element.trigger(<span class="string">&#x27;type&#x27;</span>) <span class="comment">//第二种简写</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">triggerHandler()</span><br><span class="line">和前面的区别,该模式不会除法元素的默认行为</span><br></pre></td></tr></table></figure>
+<p><strong>1.5jQuery事件对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">event.preventDefault() <span class="comment">//阻止默认行为</span></span><br><span class="line">event.stopPropagation() <span class="comment">//阻止冒泡</span></span><br><span class="line">演示代码:</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="built_in">window</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;点击&quot;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&quot;div&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;点击&quot;</span>);</span><br><span class="line">        <span class="comment">// e.stopPropagation();</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//：jQuery中的 event 对象使用，可以借鉴 API 和 DOM 中的 event 。</span></span><br></pre></td></tr></table></figure>
+<p><strong>1.6. jQuery 拷贝对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 1.合并数据</span></span><br><span class="line"><span class="keyword">var</span> targetObj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">id: <span class="number">1</span>,</span><br><span class="line">name: <span class="string">&quot;andy&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// $.extend(target, obj);</span></span><br><span class="line">$.extend(targetObj, obj);</span><br><span class="line"><span class="built_in">console</span>.log(targetObj);</span><br><span class="line"><span class="comment">// 2. 会覆盖 targetObj 里面原来的数据</span></span><br><span class="line"><span class="keyword">var</span> targetObj = &#123;</span><br><span class="line">id: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">id: <span class="number">1</span>,</span><br><span class="line">name: <span class="string">&quot;andy&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// $.extend(target, obj);</span></span><br><span class="line">$.extend(targetObj, obj);</span><br><span class="line"><span class="built_in">console</span>.log(targetObj);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>1.7 jQuery 多库共存</strong></p>
+<ol>
+<li>把里面的$符号统一改为 jQuery;</li>
+<li>jQuery 变量规定新的名称: $.noConflict()</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jq=$.noConflict();</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/09/jQuery03/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jQuery02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

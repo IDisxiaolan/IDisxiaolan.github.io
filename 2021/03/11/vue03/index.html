@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | ID是小兰</title>
+  <title>vue03 | ID是小兰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ID是小兰">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="1.0:组件的定义和注册1.1:组件即时标签1.2:组件注册12345678&#x2F;&#x2F;全局注册 :例子Vue.component(&amp;#x27;组件名&amp;#x27;,&amp;#123;    data()&amp;#123;        return&amp;#123;            count:0        &amp;#125;    &amp;#125;&amp;#125;) 12345&#x2F;&#x2F;局部注册components:&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue03">
+<meta property="og:url" content="http://example.com/2021/03/11/vue03/index.html">
 <meta property="og:site_name" content="ID是小兰">
+<meta property="og:description" content="1.0:组件的定义和注册1.1:组件即时标签1.2:组件注册12345678&#x2F;&#x2F;全局注册 :例子Vue.component(&amp;#x27;组件名&amp;#x27;,&amp;#123;    data()&amp;#123;        return&amp;#123;            count:0        &amp;#125;    &amp;#125;&amp;#125;) 12345&#x2F;&#x2F;局部注册components:&amp;#123;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-11T13:55:02.000Z">
+<meta property="article:modified_time" content="2021-03-12T23:57:51.480Z">
 <meta property="article:author" content="ID是小兰">
 <meta name="twitter:card" content="summary">
   
@@ -183,295 +187,197 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue03" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue03
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/11/vue03/" class="archive-article-date">
+
+        
+        <a href="/2021/03/11/vue03/" class="archive-article-date">
   	<time datetime="2021-03-11T13:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/11/vue03/">vue03</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-0-组件的定义和注册"><a href="#1-0-组件的定义和注册" class="headerlink" title="1.0:组件的定义和注册"></a>1.0:组件的定义和注册</h3><h4 id="1-1-组件即时标签"><a href="#1-1-组件即时标签" class="headerlink" title="1.1:组件即时标签"></a>1.1:组件即时标签</h4><h4 id="1-2-组件注册"><a href="#1-2-组件注册" class="headerlink" title="1.2:组件注册"></a>1.2:组件注册</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局注册 :例子</span></span><br><span class="line">Vue.component(<span class="string">&#x27;组件名&#x27;</span>,&#123;</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            count:<span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//局部注册</span></span><br><span class="line">components:&#123;</span><br><span class="line">    组件名<span class="number">1</span>:&#123;配置选项&#125;</span><br><span class="line">    组件名<span class="number">2</span>:&#123;配置选项&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>**注意:**不要全大写,驼峰换中划线,语义化,首字母大写</p>
+<h4 id="1-3-组件配置选项"><a href="#1-3-组件配置选项" class="headerlink" title="1.3:组件配置选项"></a>1.3:组件配置选项</h4><p>data:只有data是一个函数返回要给对象,每个组件的数据才会相互独立</p>
+<p>template: html字符;选择器匹配template的内容作为模板 ;模板只能有一个根标签</p>
+<h3 id="2-0-组件通信"><a href="#2-0-组件通信" class="headerlink" title="2.0:组件通信"></a>2.0:组件通信</h3><h4 id="2-1父子通信"><a href="#2-1父子通信" class="headerlink" title="2.1父子通信"></a>2.1父子通信</h4><h5 id="props-使用"><a href="#props-使用" class="headerlink" title="props:使用"></a>props:使用</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// props: [&#x27;属性1&#x27;,&#x27;属性2&#x27;]</span></span><br><span class="line"><span class="comment">// 父组件  &lt;组件 属性名1=&quot;数据&quot;  :属性名2=&quot;变量&quot; /&gt;</span></span><br><span class="line"><span class="comment">// 子组件  &#123;&#123; 属性名1 &#125;&#125;   &#123;&#123; 属性名2 &#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="props-验证"><a href="#props-验证" class="headerlink" title="props:验证"></a>props:验证</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;my-component&#x27;</span>,&#123;</span><br><span class="line">    props:&#123;</span><br><span class="line">        <span class="comment">// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)</span></span><br><span class="line">    属性名<span class="number">1</span>:<span class="built_in">Number</span>,</span><br><span class="line">         <span class="comment">// 多个可能的类型</span></span><br><span class="line">    propB: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span><br><span class="line">    <span class="comment">// 必填的字符串</span></span><br><span class="line">    propC: &#123;</span><br><span class="line">        type: <span class="built_in">String</span>,</span><br><span class="line">        required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">         <span class="comment">// 带有默认值的数字</span></span><br><span class="line">    propD: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 带有默认值的对象</span></span><br><span class="line">    propE: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="comment">// 对象或数组默认值必须从一个工厂函数获取</span></span><br><span class="line">      <span class="keyword">default</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">message</span>: <span class="string">&#x27;hello&#x27;</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 自定义验证函数</span></span><br><span class="line">    propF: &#123;</span><br><span class="line">      validator: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这个值必须匹配下列字符串中的一个</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&#x27;success&#x27;</span>, <span class="string">&#x27;warning&#x27;</span>, <span class="string">&#x27;danger&#x27;</span>].indexOf(value) !== -<span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>:数据流自上而下！ 不允许修改props！ 【给props里面的属性赋值】</p>
+<h4 id="2-2子父通信"><a href="#2-2子父通信" class="headerlink" title="2.2子父通信"></a>2.2子父通信</h4><ul>
+<li>子组件: $emit(‘自定义事件’,实参)</li>
+<li>父组件:&lt;父组件 @自定义事件=”父的事件函数” / &gt;</li>
+<li>父组件 methods:{父事件函数(形参){}}</li>
+</ul>
+<h4 id="2-2-2-兄弟之间的传递"><a href="#2-2-2-兄弟之间的传递" class="headerlink" title="2.2.2:兄弟之间的传递"></a>2.2.2:兄弟之间的传递</h4><ul>
+<li>兄弟之间传递数据需要借助于事件中心，通过事件中心传递数据   提供事件中心    var hub = new Vue()</li>
+<li>传递数据方，通过一个事件触发hub.$emit(方法名，传递的数据)</li>
+<li>接收数据方，通过mounted(){} 钩子中  触发hub.$on()方法名</li>
+<li>销毁事件 通过hub.$off()方法名销毁之后无法进行传递数据</li>
+</ul>
+<h3 id="3-0-组件插槽"><a href="#3-0-组件插槽" class="headerlink" title="3.0:组件插槽"></a>3.0:组件插槽</h3><ul>
+<li>组件的最大特性就是复用性，而用好插槽能大大提高组件的可复用能力</li>
+</ul>
+<h4 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h4><ul>
+<li>具有名字的插槽 </li>
+<li>使用 <slot> 中的 “name” 属性绑定元素</li>
+</ul>
+<h4 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h4><ul>
+<li>父组件对子组件加工处理</li>
+<li>既可以复用子组件的slot，又可以使slot内容不一致</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/11/vue03/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/11/vue02/" class="archive-article-date">
-  	<time datetime="2021-03-11T00:46:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/11/vue02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/11/vue02/">vue02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-0-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E6%B3%A8%E5%86%8C"><span class="toc-number">1.</span> <span class="toc-text">1.0:组件的定义和注册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%BB%84%E4%BB%B6%E5%8D%B3%E6%97%B6%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.</span> <span class="toc-text">1.1:组件即时标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="toc-number">1.2.</span> <span class="toc-text">1.2:组件注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E7%BB%84%E4%BB%B6%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">1.3.</span> <span class="toc-text">1.3:组件配置选项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-0-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">2.</span> <span class="toc-text">2.0:组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E7%88%B6%E5%AD%90%E9%80%9A%E4%BF%A1"><span class="toc-number">2.1.</span> <span class="toc-text">2.1父子通信</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#props-%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">props:使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#props-%E9%AA%8C%E8%AF%81"><span class="toc-number">2.1.2.</span> <span class="toc-text">props:验证</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E5%AD%90%E7%88%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">2.2.</span> <span class="toc-text">2.2子父通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E5%85%84%E5%BC%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92"><span class="toc-number">2.3.</span> <span class="toc-text">2.2.2:兄弟之间的传递</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-%E7%BB%84%E4%BB%B6%E6%8F%92%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text">3.0:组件插槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD"><span class="toc-number">3.1.</span> <span class="toc-text">具名插槽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD"><span class="toc-number">3.2.</span> <span class="toc-text">作用域插槽</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/09/vue01/" class="archive-article-date">
-  	<time datetime="2021-03-08T23:38:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/09/vue01/">vue01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2021-02-27T06:07:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/27/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/">前后端身份验证</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/27/mysql%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2021-02-27T01:09:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/27/mysql%E5%9F%BA%E7%A1%80/">mysql基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/24/node-js04/" class="archive-article-date">
-  	<time datetime="2021-02-24T13:50:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/24/node-js04/">node.js04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/22/node-js03/" class="archive-article-date">
-  	<time datetime="2021-02-22T00:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/22/node-js03/">node.js03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/22/node-js02/" class="archive-article-date">
-  	<time datetime="2021-02-22T00:02:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/22/node-js02/">node.js02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/22/node-js01/" class="archive-article-date">
-  	<time datetime="2021-02-22T00:01:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/22/node-js01/">node.js01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/09/git/" class="archive-article-date">
-  	<time datetime="2021-02-09T12:26:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/09/git/">git</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -495,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
